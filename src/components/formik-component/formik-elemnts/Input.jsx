@@ -1,9 +1,12 @@
-import { useField } from "formik";
+import { useField, ErrorMessage } from "formik";
 import React from "react";
+import ErrorMassages from "./ErrorMassage";
 
 const Input = (props) => {
   const { label, name, placeholder, type } = props;
   const [field, meta, helpers] = useField(name);
+
+  console.log("Meta", meta);
 
   return (
     <div>
@@ -18,7 +21,11 @@ const Input = (props) => {
           //   onBlur={field.onBlur}
           //   value={field.value}
           {...field}
+          className={`${meta.touched && meta?.error && "error_border"}`}
         />
+
+        <ErrorMassages error={meta.touched && meta?.error} />
+        {/* <ErrorMessage name={name} />{" "} */}
       </label>
     </div>
   );

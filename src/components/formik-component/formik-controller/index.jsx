@@ -5,7 +5,7 @@ import Checkbox from "../formik-elemnts/Checkbox";
 import Select from "../formik-elemnts/Select";
 import Button from "../formik-elemnts/Button";
 
-const FormikContoller = (props) => {
+const FormikController = (props) => {
   const { control, ...rest } = props;
   //   console.log("Props", { ...rest });
 
@@ -26,4 +26,4 @@ const FormikContoller = (props) => {
   }
 };
 
-export default FormikContoller;
+export default FormikController;

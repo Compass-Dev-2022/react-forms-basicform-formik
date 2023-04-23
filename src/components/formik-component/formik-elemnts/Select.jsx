@@ -1,5 +1,6 @@
 import { useField } from "formik";
 import React from "react";
+import ErrorMassages from "./ErrorMassage";
 
 const Select = (props) => {
   const { label, name, options } = props;
@@ -18,6 +19,7 @@ const Select = (props) => {
             </option>
           ))}
         </select>
+        <ErrorMassages error={meta.touched && meta.error} />
       </label>
     </div>
   );
